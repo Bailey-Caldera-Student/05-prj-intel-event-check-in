@@ -29,6 +29,7 @@ form.addEventListener("submit", function (event){
   // Update progress bar
   const percentage = Math.round((count / maxCount) * 100) + "%";
   console.log(`Progress: ${percentage}`);
+  
   const progressBar = document.getElementById("progressBar");
   progressBar.style.width = percentage;
 
@@ -37,9 +38,13 @@ form.addEventListener("submit", function (event){
   teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
   
   // Show welcome message
-  const message = `🍕 Welcome, ${name} from ${teamName}`;
+  const message = `🎉 Welcome, ${name} from ${teamName}`;
   console.log(message);
 
+  const displayMessage = document.getElementById("greeting");
+  displayMessage.textContent = message;
+  displayMessage.style.display = "block";
+  
   form.reset();
 });
 
