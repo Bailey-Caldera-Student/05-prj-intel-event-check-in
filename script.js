@@ -21,10 +21,16 @@ form.addEventListener("submit", function (event){
   // Increment count
   count++;
   console.log("total check-in: ", count);
+  
+  // Update attendee count
+  const attendeeCount = document.getElementById("attendeeCount");
+  attendeeCount.textContent = count;
 
   // Update progress bar
   const percentage = Math.round((count / maxCount) * 100) + "%";
   console.log(`Progress: ${percentage}`);
+  const progressBar = document.getElementById("progressBar");
+  progressBar.style.width = percentage;
 
   // Update team counter
   const teamCounter = document.getElementById(team + "Count");
