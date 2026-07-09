@@ -259,6 +259,11 @@ button .fas {
   color: #003c71;
 }
 
+.success-message strong {
+  color: #0071c5;
+  font-weight: 700;
+}
+
 /* Counter */
 #attendeeCount {
   color: #0071c5;

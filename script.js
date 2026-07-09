@@ -39,12 +39,47 @@ form.addEventListener("submit", function (event) {
   const teamCounter = document.getElementById(team + "Count");
   teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
 
-  // Show welcome message
-  const message = `🎉 Welcome, ${name} from ${teamName}`;
+  // Show welcome message or celebration message
+  let message = `🎉 Welcome, ${name} from ${teamName}`;
+
+  if (count >= maxCount) {
+    const waterCount = parseInt(
+      document.getElementById("waterCount").textContent,
+    );
+    const zeroCount = parseInt(
+      document.getElementById("zeroCount").textContent,
+    );
+    const powerCount = parseInt(
+      document.getElementById("powerCount").textContent,
+    );
+
+    const teamCounts = [
+      { name: "Team Water Wise", count: waterCount },
+      { name: "Team Net Zero", count: zeroCount },
+      { name: "Team Renewables", count: powerCount },
+    ];
+
+    let winningTeam = teamCounts[0];
+
+    for (let index = 1; index < teamCounts.length; index++) {
+      if (teamCounts[index].count > winningTeam.count) {
+        winningTeam = teamCounts[index];
+      }
+    }
+
+    message = `🎉 Goal reached! <strong>${winningTeam.name}</strong> is the winning team with ${winningTeam.count} check-ins!`;
+  }
+
   console.log(message);
 
-  displayMessage.textContent = message;
+  displayMessage.innerHTML = message;
   displayMessage.style.display = "block";
+
+  if (count >= maxCount) {
+    displayMessage.className = "success-message";
+  } else {
+    displayMessage.className = "";
+  }
 
   // Attendee list
   if (attendeeList) {
