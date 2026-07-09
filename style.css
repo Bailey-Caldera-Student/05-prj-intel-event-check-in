@@ -365,9 +365,36 @@ select {
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
+.attendee-item.water {
+  background-color: #e8f7fc;
+  border: 1px solid #bfeaf8;
+}
+
+.attendee-item.zero {
+  background-color: #ecfdf3;
+  border: 1px solid #cfeedd;
+}
+
+.attendee-item.power {
+  background-color: #fff7ed;
+  border: 1px solid #fde3c3;
+}
+
 .attendee-name {
   font-weight: 600;
   color: #0f172a;
+}
+
+.attendee-item.water .attendee-name {
+  color: #0f5f7a;
+}
+
+.attendee-item.zero .attendee-name {
+  color: #166534;
+}
+
+.attendee-item.power .attendee-name {
+  color: #9a4d00;
 }
 
 .attendee-team {
@@ -376,6 +403,21 @@ select {
   background-color: #eef6ff;
   padding: 4px 10px;
   border-radius: 999px;
+}
+
+.attendee-team.water {
+  background-color: #c9edf9;
+  color: #0b5f75;
+}
+
+.attendee-team.zero {
+  background-color: #d8f7e2;
+  color: #166534;
+}
+
+.attendee-team.power {
+  background-color: #ffe4c2;
+  color: #9a4d00;
 }
 
 .attendee-empty {

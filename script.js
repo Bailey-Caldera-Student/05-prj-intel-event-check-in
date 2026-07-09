@@ -46,6 +46,7 @@ form.addEventListener("submit", function (event) {
   displayMessage.textContent = message;
   displayMessage.style.display = "block";
 
+  // Attendee list
   if (attendeeList) {
     const emptyMessage = attendeeList.querySelector(".attendee-empty");
 
@@ -54,8 +55,8 @@ form.addEventListener("submit", function (event) {
     }
 
     const attendeeItem = document.createElement("li");
-    attendeeItem.className = "attendee-item";
-    attendeeItem.innerHTML = `<span class="attendee-name">${name}</span><span class="attendee-team">${teamName}</span>`;
+    attendeeItem.className = `attendee-item ${team}`;
+    attendeeItem.innerHTML = `<span class="attendee-name">${name}</span><span class="attendee-team ${team}">${teamName}</span>`;
     attendeeList.appendChild(attendeeItem);
   }
 
